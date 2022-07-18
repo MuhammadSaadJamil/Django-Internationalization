@@ -1,0 +1,17 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header class="header">
+    <h1>{{ Heading }}</h1>
+    <h2>Welcome {{ user }} from {{ location }}</h2>
+</header>
+<div class="content">
+    {% trans 'Hi, Welcome to FinDESK, FinDESK is a financial data managment system with basic reporting functionalities.' %}
+</div>
+</body>
+</html>
