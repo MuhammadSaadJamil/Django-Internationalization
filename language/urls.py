@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import TemplateView
 
 from main.views import home
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    path('switch', TemplateView.as_view(template_name='switch.html'), name="change"),
+    path('i18n/', include('django.conf.urls.i18n')),
+]
+
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', home)
+    path('', home, name='home'),
 )
