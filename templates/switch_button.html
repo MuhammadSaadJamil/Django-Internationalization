@@ -1,0 +1,15 @@
+{% load i18n %} {#1#}
+<form action="{% url 'set_language' %}" method="post">  {#2#}
+    {% csrf_token %}  {#3#}
+    <select name="language" style="display: none">  {#4#}
+        {% get_current_language as LANGUAGE_CODE %}  {#5#}
+
+        {% if LANGUAGE_CODE == 'ur' %}
+            <option value="en" selected></option>
+    {% else %}
+            <option value="ur" selected></option>
+    {% endif %}
+
+    </select>
+    <input type="submit" value="Switch">  {#9#}
+</form>
