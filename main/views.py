@@ -1,11 +1,7 @@
-import time
-
-from django.conf import settings
 from django.shortcuts import render
-from django.utils.timezone import now
 from django.utils.translation import gettext as _
 
-from forms import TestForm
+from main.forms import TestForm
 from main.models import Test
 
 
