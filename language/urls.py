@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-from main.views import home
+from main.views import *
 
 urlpatterns = [
     path('switch', TemplateView.as_view(template_name='switch.html'), name="change"),
@@ -28,4 +28,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+    path('add', create_test, name='create'),
+    path('update/<int:id>', update_test, name='update'),
 )
